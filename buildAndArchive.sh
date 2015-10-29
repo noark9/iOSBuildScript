@@ -31,7 +31,7 @@ function buildPackage()
 
     # build app
     echo "\033[33mInfo: Building App\033[0m"
-    xcrun xcodebuild -workspace $PROJECT_WORKSPACE_PATH -scheme $SCHEME_NAME -configuration $CONFIGURATION_NAME -sdk iphoneos SYMROOT=$target_path/build COMMON_LIBS=$COMMON_LIBS_PATH>$LOG_PATH/$target_name.build.log
+    xcrun xcodebuild -workspace $PROJECT_WORKSPACE_PATH -scheme $SCHEME_NAME -configuration $CONFIGURATION_NAME -sdk iphoneos SYMROOT=$target_path/build>$LOG_PATH/$target_name.build.log
     ret=$?
     if [ $ret -ne 0 ]; then
         return $ret
